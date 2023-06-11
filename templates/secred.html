@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+{{ super()}}
+{% endblock %}
+
+{% block content %}
+<div style="width: 1000px; margin-left: auto; margin-right: auto;">
+    <div>
+        <h1 style="justify-content: center; align-items: center; display: grid;">Prognoza ludności na lata 2014 - 2050
+        </h1>
+
+        <br>
+        <br>
+        <br>
+        <p style="justify-content: center; align-items: center; display: grid;"">Prognoza ludności na lata 2014-2050 sporządzona
+            została na podstawie przyjętych wariantów założeń prognostycznych, które były przedmiotem konsultacji
+            szerokiego
+            grona specjalistów reprezentujących środowisko naukowe - zostały zaprezentowane i przedyskutowane m.in. na
+            Posiedzeniu Plenarnym Rządowej Rady Ludnościowej w dniu 22 maja 2014 r. Uwagi ekspertów oraz recenzentów
+            pozwoliły na wybór scenariusza założeń uznanego za najlepiej określający prawdopodobny rozwój ludności
+            Polski w
+            perspektywie do 2050 r.</p>
+
+    </div>
+
+    <div>
+        <img class=" plot" src="data:image/png;base64, {{ plot_url1 }}"
+            style="justify-content: center; align-items: center; display: grid;">
+
+            <br>
+        <h2>Według prognoz na przestrzeni najbliższych lat czeka nas depopulacja w niniejszym raporcie chciałbym
+            przedstawić klika kwestii które będą miały niezaprzeczalny wpływ na liczebność ludzi w Polsce.</h2>
+
+        <br><img class="plot" src="data:image/png;base64, {{ plot_url3 }}" style="position: absolute; left: 50%;">
+        <br>
+        <p style="position: absolute; right: 55%; left: 25%; top: 160%;">Liczba urodzeń jest zawsze wynikiem realizacji
+            określonej dzietności oraz liczby
+            kobiet w wieku prokreacyjnym, a w zasadzie w wieku intensywnej płodności. Prognozowane
+            zmiany dzietności w perspektywie do 2050 r.
+            nie spowodują wzrostu liczby urodzeń z uwagi na głębokie niekorzystne
+            zmiany w liczbie i strukturze kobiet będących w wieku prokreacyjnym. W chwili obecnej
+            w wiek największego natężenia urodzeń przypadający mniej więcej na okres od 25 do 35 roku
+            życia (choć ta granica systematycznie rośnie), wchodzą coraz mniej liczne roczniki kobiet (wykres poniżej).
+            W związku z powyższym w ciągu najbliższych lat należy się spodziewać
+            systematycznego spadku liczby urodzeń, który jak wskazują wyniki utrzyma się do końca horyzontu prognozy.
+        </p>
+
+
+        <br><img class="plot" src="data:image/png;base64, {{ plot_url4 }}"
+            style="position: absolute; right: 48%; top: 205%;">
+        <p style="position: absolute; left: 55%; top: 230%; right: 25%;">Podobnie jak W 2050 r. liczba ludności Polski
+            wyniesie 33 mln 951 tys. W porównaniu do stanu
+            w roku bazowym 2013 oznacza to zmniejszenie liczby ludności o 4,55 miliona tj. o 12%.
+            Oprócz ujemnego przyrostu naturalnego, będziemy obserwować dalsze niekorzystne z zmiany
+            w strukturze ludności według wieku oraz zmniejszanie się liczebności kobiet w wieku
+            rozrodczym.</p>
+
+        <br><img class="plot" src="data:image/png;base64, {{ plot_url2 }}"
+            style="position: absolute; left: 50%; top: 300%;">
+
+        <p style="position: absolute; top: 280%; left: 35%; right: 35%;">W perspektywie najbliższych dwudziestu kilku
+            lat z uwagi na gwałtowny proces
+            starzenia się ludności wyrażony m.in. wzrostem udziału osób w zaawansowanym wieku
+            można spodziewać się znacznego wzrostu liczby zgonów. Przewiduje się, że liczba zgonów
+            będzie rosła stopniowo do 2043 r. Potem nastąpi niewielki spadek – ostatecznie w 2050 r.
+            liczba zgonów wyniesie 432 tys., a więc o blisko 55 tys. więcej, niż w 2014 r. (Wykres obok).</p>
+
+        <img src="{{ url_for('pie_png') }}" style="position: absolute; top: 300%; left: 10%;">
+        <br>
+        <img src="{{ url_for('pie2_png') }}" style="position: absolute; top: 300%; left: 30%;">
+        <br>
+        <img src="{{ url_for('pie3_png') }}" style="position: absolute; top: 330%; left: 10%;">
+
+        <br>
+        <img src="{{ url_for('pie4_png') }}" style="position: absolute; top: 330%; left: 30%;">
+
+    </div>
+</div>
+{% endblock %}

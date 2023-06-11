@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+
+
+{% block navbar %}
+{{ super() }}
+{% endblock %}
+
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{ message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+
+
+<div class="row d-flex justify-content-center">
+
+    <div class="col-md-4">
+        <form method="POST">
+            {{ form.csrf_token }}
+            <div class="col-auto my-1">
+                <label for="inlineFormInputName" class="sr-only">{{ form.username.label }}</label>{{
+                form.username(class_="form-control") }}
+            </div>
+            <div class="col-auto my-1">
+                <label for="inlineFormInputName" class="sr-only">{{ form.password.label }}</label>{{
+                form.password(class_="form-control") }}
+            </div>
+            <div class="col-auto my-1">
+                <div class="form-check">
+                    {{ form.remember(class_='form-check-input') }}
+                    <label class="form-check-label" for="autoSizingCheck2">{{ form.remember.label }}</label>
+                </div>
+            </div>
+            <div class="col-auto my-1">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

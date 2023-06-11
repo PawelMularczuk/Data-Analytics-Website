@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block navbar %}
+{{ super() }}
+{% endblock %}
+
+{% block content %}
+<div class="row d-flex justify-content-center">
+
+    <div class="col-md-4">
+        <form method="POST">
+            {{ form.csrf_token }}
+            <div class="col-auto my-1">
+                <label for="inlineFormInputName" class="sr-only">{{ form.email.label}}</label>{{ form.email(class_="form-control") }}
+            </div>
+            <div class="col-auto my-1">
+                <label for="inlineFormInputName" class="sr-only">{{ form.username.label }}</label>{{
+                form.username(class_="form-control") }}
+            </div>
+            <div class="col-auto my-1">
+                <label for="inlineFormInputName" class="sr-only">{{ form.password.label }}</label>{{
+                form.password(class_="form-control") }}
+            </div>
+            <div class="col-auto my-1">
+                <label for="inlineFormInputName" class="sr-only">{{ form.password2.label }}</label>{{ form.password2(class_="form-control") }}
+            </div>
+            <div class="col-auto my-1">
+                <button type="submit" class="btn btn-primary">{{ form.submit.label }}</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
